@@ -1,0 +1,20 @@
+<include src='layouts/main'>
+  <arg pageContent>
+    <article>
+      <h2>New Blog Post</h2>
+      <form action='/newPost' method='post' id='submitNewPost'>
+        <p>
+          <label for='postTitle'>Title:</label>
+          <input type='text' id='postTitle' name='postTitle' placeholder='Give it a cool title'>
+        </p>
+        <p>
+          <label for='postContent'>Post:</label>
+          <textarea id='postContent' name='postContent'></textarea>
+        </p>
+        <p>
+          <input type='submit' id='submitButton' name='submitButton' value='Submit Post'>
+        </p>
+      </form>
+    </article>
+  </arg>
+</include>
