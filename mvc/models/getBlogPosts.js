@@ -12,9 +12,7 @@ module.exports = function(req, res, done) {
         
     for (i = 0; i < blogPostLength; i++) {
       row = rows[i];
-      row.machineDate = row.date;
-      var day = moment.unix(row.machineDate);
-      row.date = day.format('MM-DD-YYYY');
+      row.date = moment.unix(row.date).format("MM/DD/YYYY");
       blogPosts.push(row);
     }
     
