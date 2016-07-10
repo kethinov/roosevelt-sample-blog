@@ -5,7 +5,6 @@ module.exports = function(req, done) {
       success,
       subject = addRow.postTitle,
       post = addRow.postContent,
-      time = moment(),
       date = moment().unix();
   db.query('INSERT INTO posts (subject, post, date) VALUES ($1, $2, $3)', [subject, post, date], function(err, result) {
     if (err) {
