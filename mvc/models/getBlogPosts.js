@@ -1,4 +1,6 @@
-module.exports = function(req, res, done) {
+var moment = require('moment');
+
+module.exports = function(done) {
   
   db.query('SELECT * FROM posts ORDER BY id DESC', function(err, result) {
     if (err) {
@@ -6,13 +8,13 @@ module.exports = function(req, res, done) {
     }
     var blogPosts = [],
         rows = result.rows,
-        blogPostLength = rows.length,
         row,
         i;
         
-    for (i = 0; i < blogPostLength; i++) {
+    for (i = 0; i < rows.length; i++) {
       row = rows[i];
-      row.date = moment.unix(row.date).format("MM/DD/YYYY");
+      row.machineDate = row.date;
+      row.date = moment.unix(row.machineDate).format("MM/DD/YYYY");
       blogPosts.push(row);
     }
     

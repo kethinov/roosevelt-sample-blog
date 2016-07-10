@@ -1,8 +1,6 @@
 var pg = require('pg'),
     config;
 
-global.moment = require('moment');
-
 config = {
   user: 'postgres',
   database: 'blogposts', 

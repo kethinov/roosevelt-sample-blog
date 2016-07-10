@@ -2,12 +2,13 @@
 var model = {
   content: {
     appTitle: 'roosevelt sample blog',
-    pageTitle: '{content.appTitle}'
+    pageTitle: '{content.appTitle}',
+    pageHeader: 'Home'
   }
 };
 
 // extend global model provide additional useful vars at runtime and export it
-module.exports = function(req, res) {
+module.exports = function(req) {
   return {
 
     // always static

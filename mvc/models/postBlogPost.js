@@ -1,4 +1,6 @@
-module.exports = function(req, res, done) {
+var moment = require('moment');
+
+module.exports = function(req, done) {
   var addRow = req.body,
       success,
       subject = addRow.postTitle,

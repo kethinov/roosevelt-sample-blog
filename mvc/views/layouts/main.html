@@ -12,7 +12,20 @@
   <body>
     <main>
       <header>
-        <h1>This is my title</h1>
+        <h1>{content.pageHeader}</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href='/'>Home</a>
+            </li>
+            <li>
+              <a href='/newpost'>New Post</a>
+            </li>
+            <li>
+              <a href='/edit'>Edit</a>
+            </li>
+          </ul>
+        </nav>
       </header>
       {pageContent}
     </main>
