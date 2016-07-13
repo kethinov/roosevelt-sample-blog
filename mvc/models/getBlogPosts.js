@@ -8,10 +8,11 @@ module.exports = function(done) {
     }
     var blogPosts = [],
         rows = result.rows,
+        totalRows = rows.length,
         row,
         i;
         
-    for (i = 0; i < rows.length; i++) {
+    for (i = 0; i < totalRows; i++) {
       row = rows[i];
       row.machineDate = row.date;
       row.date = moment.unix(row.machineDate).format("MM/DD/YYYY");

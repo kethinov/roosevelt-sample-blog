@@ -6,7 +6,7 @@ module.exports = function(app) {
     res.render('newPost', model);
   });
   app.route('/newPost').post(function(req, res) {
-    require('models/postBlogPost')(req, function (success) {
+    require('models/addBlogPosts')(req, function (success) {
       res.redirect('/');
     });
   });

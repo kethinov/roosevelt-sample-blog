@@ -1,0 +1,21 @@
+<include src='layouts/main'>
+  <arg pageContent>
+    <loop through='blogPosts' val='blogpost'>
+      <form action='/editPost' method='post' id='editBlogPost'>
+        <p>
+          <label for='editTitle'>Title:</label>
+          <input type='hidden' id='postId' name='postId' value='{blogpost.id}'>
+          <input type='text' id='editTitle' name='editTitle' value='{blogpost.subject}'>
+        </p>
+        <p>
+          <label for='editContent'>Post:</label>
+          <textarea id='editContent' name='editContent'>{blogpost.post}</textarea>
+        </p>
+        <p>
+          <input type='submit' id='editButton' name='editButton' value='Edit Post'>
+          <input type='submit' id='deleteButton' name='deleteButton' value='Delete Post'>
+        </p>
+      </form>
+    </loop>
+  </arg>
+</include>
