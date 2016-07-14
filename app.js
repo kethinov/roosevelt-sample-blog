@@ -19,12 +19,16 @@ db.connect(function(err, client, done) {
   }
   else {
     console.log('Connected to database');
-    var target = path.resolve('statics/css/topcoat.css'),
+    var target = path.resolve('statics/css/topcoat.less'),
         source = path.resolve('node_modules/topcoat/css/topcoat-desktop-light.css');
-      fs.symlink(source, target, 'file', function (err) {
+    fs.access(target, fs.F_OK, function (err) {
+      if (err) {
+        fs.symlink(source, target, 'file', function (err) {
         if (err)
-          return;
-      });
+          console.error('symlink error: ', err);
+        });
+      }
+    });
     serverStart();
   }
 });
