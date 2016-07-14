@@ -11,12 +11,13 @@ module.exports = function(app) {
   app.route('/editPost').post(function(req, res) {
     if (!req.body.deleteButton) {
       require('models/editBlogPosts')(req, function (success) {
+        res.redirect('/');
       });
     }
     else {
       require('models/deleteBlogPosts')(req, function (success) {
+        res.redirect('/');
       });
     }
-    res.redirect('/');
   });
 };
