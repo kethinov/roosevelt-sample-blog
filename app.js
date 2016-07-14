@@ -1,4 +1,8 @@
 var pg = require('pg'),
+    fs = require('fs'),
+    path = require('path'),
+    target,
+    source,
     config;
 
 config = {
@@ -17,6 +21,14 @@ db.connect(function(err, client, done) {
   }
   else {
     console.log('Connected to database');
+    target = path.resolve('statics/css/topcoat.less'),
+    source = path.resolve('node_modules/topcoat/css/topcoat-desktop-light.css');
+    
+    fs.access(target, function(err) {
+      if (err) {
+        fs.symlinkSync(source, target);
+      }
+    });
     serverStart();
   }
 });

@@ -4,7 +4,10 @@
       <article>
         <h2>{blogpost.subject}</h2>
         <p>{blogpost.post}</p>
-        <time datetime="{blogpost.machineDate}">{blogpost.date}</time>
+        <time datetime='{blogpost.machineDate}'>{blogpost.date}</time>
+        <unless blogpost.edited='12/31/1969'>
+          <time class='lastEdited' datetime='{blogpost.machineEdited}'>(Last Edited: {blogpost.edited})</time>
+        </unless>
       </article>
     </loop>
   </arg>

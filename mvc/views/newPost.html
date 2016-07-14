@@ -1,7 +1,6 @@
 <include src='layouts/main'>
   <arg pageContent>
     <article>
-      <h2>New Blog Post</h2>
       <form action='/newPost' method='post' id='submitNewPost'>
         <p>
           <label for='postTitle'>Title:</label>
@@ -12,7 +11,7 @@
           <textarea id='postContent' name='postContent'></textarea>
         </p>
         <p>
-          <input type='submit' id='submitButton' name='submitButton' value='Submit Post'>
+          <input type='submit' class='topcoat-button' id='submitButton' name='submitButton' value='Submit Post'>
         </p>
       </form>
     </article>
