@@ -15,10 +15,14 @@ module.exports = function(done) {
     for (i = 0; i < totalRows; i++) {
       row = rows[i];
       row.machineDate = row.date;
-      row.machineEdited = row.edited
       row.date = moment.unix(row.machineDate).format('MM/DD/YYYY');
-      row.edited = moment.unix(row.machineEdited).format('MM/DD/YYYY');
-      console.log(row.edited);
+      if (row.edited) {
+        row.machineEdited = row.edited
+        row.edited = moment.unix(row.machineEdited).format('MM/DD/YYYY');
+      }
+      else {
+        row.edited = undefined;
+      }
       blogPosts.push(row);
     }
     
