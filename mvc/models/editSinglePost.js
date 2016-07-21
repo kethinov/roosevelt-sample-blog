@@ -2,17 +2,19 @@ var moment = require('moment');
 
 module.exports = function(req, done) {
   var editRow = req.body,
-      postId = editRow.postId;
+      postId = editRow.postId,
+      blogPosts = [],
+      rows,
+      totalRows,
+      row,
+      i;
   
   db.query('SELECT * FROM posts WHERE id = $1', [postId], function(err, result) {
     if (err) {
       return console.error('error running query', err);
     }
-    var blogPosts = [],
-        rows = result.rows,
-        totalRows = rows.length,
-        row,
-        i;
+    rows = result.rows;
+    totalRows = rows.length;
         
     for (i = 0; i < totalRows; i++) {
       row = rows[i];
