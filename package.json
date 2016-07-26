@@ -18,7 +18,8 @@
     "roosevelt-closure": "^0.2.0",
     "pg": "6.0.1",
     "moment": "2.14.1",
-    "topcoat": "0.7.5"
+    "topcoat": "0.7.5",
+    "http-auth": "2.4.4"
   },
   "devDependencies": {
     "jshint": "*",

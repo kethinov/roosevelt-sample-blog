@@ -1,4 +1,4 @@
-<include src='layouts/main'>
+<include src='layouts/admin'>
   <arg pageContent>
     <loop through='blogPosts' val='blogpost'>
       <article>
@@ -9,6 +9,11 @@
           <time class='lastEdited' datetime='{blogpost.machineEdited}'>(Last Edited: {blogpost.edited})</time>
         </if>
         <form action='/editPost' method='post' id='editBlogPost'>
+          <p>
+            <input type='hidden' id='postId' name='postId' value='{blogpost.id}'>
+            <input type='submit' class='topcoat-button' formaction='/editSinglePost' id='openEditButton' name='openEditButton' value='Edit Post'>
+            <input type='submit' class='topcoat-button' id='deleteButton' name='deleteButton' value='Delete Post'>
+          </p>
         </form>
       </article>
     </loop>

@@ -1,5 +1,11 @@
 module.exports = function(app) {
-  app.route('/editPost').get(function(req, res) {
+  var auth = require('http-auth'),
+      basic = auth.basic({
+        realm: 'Admin',
+        file: __dirname + '/../../data/users.htpasswd'
+      });
+  
+  app.route('/editPost').get(auth.connect(basic), function(req, res) {
     var model = require('models/global')(req);
     model.content.pageTitle = 'Blog Editor';
     model.content.pageHeader = 'Edit Posts';
@@ -8,6 +14,7 @@ module.exports = function(app) {
       res.render('editpost', model);
     });
   });
+  
   app.route('/editPost').post(function(req, res) {
     if (!req.body.deleteButton) {
       require('models/editBlogPosts')(req, function (success) {

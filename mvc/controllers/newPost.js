@@ -1,5 +1,11 @@
 module.exports = function(app) {
-  app.route('/newPost').get(function(req, res) {
+  var auth = require('http-auth'),
+      basic = auth.basic({
+        realm: 'Admin',
+        file: __dirname + '/../../data/users.htpasswd'
+      });
+  
+  app.route('/newPost').get(auth.connect(basic), function(req, res) {
     var model = require('models/global')(req);
     model.content.pageTitle = 'New Post';
     model.content.pageHeader = 'Add New Post';

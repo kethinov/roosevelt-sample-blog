@@ -11,6 +11,22 @@
   </head>
   <body>
     <main>
+      <header>
+        <h1>{content.pageHeader}</h1>
+        <nav>
+          <ul class='topcoat-button-bar'>
+            <li class='topcoat-button-bar__item'>
+              <a href='/admin' class='topcoat-button-bar__button'>Main</a>
+            </li>
+            <li class='topcoat-button-bar__item'>
+              <a href='/newpost' class='topcoat-button-bar__button'>New</a>
+            </li>
+            <li class='topcoat-button-bar__item'>
+              <a href='/editpost' class='topcoat-button-bar__button'>Bulk Editor</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
       {pageContent}
     </main>
     <script type='text/javascript' src='/js/main.js'></script>
