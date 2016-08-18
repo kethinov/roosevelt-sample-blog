@@ -1,16 +1,18 @@
 <include src='layouts/main'>
   <arg pageContent>
-    <loop through='blogPosts' val='blogpost'>
-      <article>
-        <h2>{blogpost.subject}</h2>
-        <p>{blogpost.post}</p>
-        <time datetime='{blogpost.machineDate}'>{blogpost.date}</time>
-        <if blogpost.edited>
-          <time class='lastEdited' datetime='{blogpost.machineEdited}'>(Last Edited: {blogpost.edited})</time>
-        </if>
-        <form action='/editPost' method='post' id='editBlogPost'>
-        </form>
-      </article>
-    </loop>
+    <section>
+      <loop through='blogPosts' val='blogpost'>
+        <article>
+          <h2>{blogpost.subject}</h2>
+          <p>{blogpost.post}</p>
+          <time datetime='{blogpost.machineDate}'>{blogpost.date}</time>
+          <if blogpost.edited>
+            <time class='lastEdited' datetime='{blogpost.machineEdited}'>(Last Edited: {blogpost.edited})</time>
+          </if>
+          <form action='/editPost' method='post' id='editBlogPost'>
+          </form>
+        </article>
+      </loop>
+    </section>
   </arg>
 </include>

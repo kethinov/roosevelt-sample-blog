@@ -1,19 +1,21 @@
 <include src='layouts/admin'>
   <arg pageContent>
-    <article>
-      <form action='/newPost' method='post' id='submitNewPost'>
-        <p>
-          <label for='postTitle'>Title:</label>
-          <input type='text' id='postTitle' name='postTitle' placeholder='Give it a cool title'>
-        </p>
-        <p>
-          <label for='postContent'>Post:</label>
-          <textarea id='postContent' name='postContent'></textarea>
-        </p>
-        <p>
-          <input type='submit' class='topcoat-button' id='submitButton' name='submitButton' value='Submit Post'>
-        </p>
-      </form>
-    </article>
+    <section>
+      <article>
+        <form action='/newPost' method='post' id='submitNewPost'>
+          <p>
+            <label for='postTitle'>Title:</label>
+            <input type='text' id='postTitle' name='postTitle' placeholder='Give it a cool title'>
+          </p>
+          <p>
+            <label for='postContent'>Post:</label>
+            <textarea id='postContent' name='postContent'></textarea>
+          </p>
+          <p>
+            <input type='submit' class='topcoat-button' id='submitButton' name='submitButton' value='Submit Post'>
+          </p>
+        </form>
+      </article>
+    </section>
   </arg>
 </include>
